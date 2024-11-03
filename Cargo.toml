@@ -1,0 +1,20 @@
+[package]
+name = "lemon-apod-api"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "lemon-apod-server"
+path = "src/server.rs"
+
+[dependencies]
+prost = "0.13.3"
+reqwest = { version = "0.12.9", features = ["json"] }
+serde = { version = "1.0.214", features = ["derive"] }
+serde_json = "1.0.132"
+tokio = { version = "1.41.0", features = ["full"] }
+tonic = "0.12.3"
+
+[build-dependencies]
+protoc-bin-vendored = "3.1.0"
+tonic-build = "0.12.3"

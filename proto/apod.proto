@@ -1,0 +1,15 @@
+syntax = 'proto3';
+package lemon_apod;
+
+service Apod {
+  rpc GetToday(Empty) returns (ApodResponse);
+  rpc GetRandom(Empty) returns (ApodResponse);
+}
+
+message Empty {}
+
+message ApodResponse {
+  string title = 1;
+  string apod_url = 2;
+  string image_url = 3;
+}
