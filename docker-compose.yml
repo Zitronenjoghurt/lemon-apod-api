@@ -1,0 +1,13 @@
+services:
+  api:
+    # For development, use build context
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # For production, use the image from Docker Hub
+    # Uncomment the following line and comment out the build section
+    #image: zitronenjoghurt/lemon-apod-api:latest
+    env_file:
+      - .env
+    ports:
+      - "50051:50051"
